@@ -177,19 +177,25 @@
 
     /* Grid of sliders */
     .slider-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem 2.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .slider-grid { grid-template-columns: 1fr; }
-    }
-
-    .slider-cell {
       display: flex;
       flex-direction: column;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .scene-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dual-slider {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .dual-slider { grid-template-columns: 1fr; }
     }
 
     /* ── Footer ── */
@@ -217,102 +223,172 @@
 
   <div class="slider-grid">
 
-    <!-- ── crb ── -->
-    <div class="slider-cell">
+    <!-- crb -->
+    <div class="scene-row">
       <p class="scene-label">Cut Roasted Beef</p>
-      <div class="vc-wrapper" data-vc>
-        <video class="vc-left" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/org/crb.mp4" type="video/mp4">
-        </video>
-        <video class="vc-right" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/ic/crb.mp4" type="video/mp4">
-        </video>
-        <div class="vc-divider"></div>
-        <div class="vc-handle">&#8942;&#8942;</div>
-        <span class="vc-label vc-label-left">w/o IC-Net</span>
-        <span class="vc-label vc-label-right">w/ IC-Net</span>
-        <span class="vc-metric-left">33.37 dB / 1.95 MB</span>
-        <span class="vc-metric-right">33.96 dB / 2.07 MB</span>
+      <div class="dual-slider">
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/crb.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/org/crb.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/o IC-Net</span>
+          <span class="vc-metric-right">33.37 dB / 1.95 MB</span>
+        </div>
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/crb.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/ic/crb.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/ IC-Net</span>
+          <span class="vc-metric-right">33.96 dB / 2.07 MB</span>
+        </div>
       </div>
     </div>
 
-    <!-- ── cs ── -->
-    <div class="slider-cell">
+    <!-- cs -->
+    <div class="scene-row">
       <p class="scene-label">Cook Spinach</p>
-      <div class="vc-wrapper" data-vc>
-        <video class="vc-left" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/org/cs.mp4" type="video/mp4">
-        </video>
-        <video class="vc-right" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/ic/cs.mp4" type="video/mp4">
-        </video>
-        <div class="vc-divider"></div>
-        <div class="vc-handle">&#8942;&#8942;</div>
-        <span class="vc-label vc-label-left">w/o IC-Net</span>
-        <span class="vc-label vc-label-right">w/ IC-Net</span>
-        <span class="vc-metric-left">32.48 dB / 1.97 MB</span>
-        <span class="vc-metric-right">33.29 dB / 2.00 MB</span>
+      <div class="dual-slider">
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/cs.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/org/cs.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/o IC-Net</span>
+          <span class="vc-metric-right">32.48 dB / 1.97 MB</span>
+        </div>
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/cs.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/ic/cs.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/ IC-Net</span>
+          <span class="vc-metric-right">33.29 dB / 2.00 MB</span>
+        </div>
       </div>
     </div>
 
-    <!-- ── fs ── -->
-    <div class="slider-cell">
+    <!-- fs -->
+    <div class="scene-row">
       <p class="scene-label">Flame Steak</p>
-      <div class="vc-wrapper" data-vc>
-        <video class="vc-left" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/org/fs.mp4" type="video/mp4">
-        </video>
-        <video class="vc-right" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/ic/fs.mp4" type="video/mp4">
-        </video>
-        <div class="vc-divider"></div>
-        <div class="vc-handle">&#8942;&#8942;</div>
-        <span class="vc-label vc-label-left">w/o IC-Net</span>
-        <span class="vc-label vc-label-right">w/ IC-Net</span>
-        <span class="vc-metric-left">33.02 dB / 1.84 MB</span>
-        <span class="vc-metric-right">34.42 dB / 1.89 MB</span>
+      <div class="dual-slider">
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/fs.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/org/fs.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/o IC-Net</span>
+          <span class="vc-metric-right">33.02 dB / 1.84 MB</span>
+        </div>
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/fs.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/ic/fs.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/ IC-Net</span>
+          <span class="vc-metric-right">34.42 dB / 1.89 MB</span>
+        </div>
       </div>
     </div>
 
-    <!-- ── fs1 ── -->
-    <div class="slider-cell">
+    <!-- fs1 -->
+    <div class="scene-row">
       <p class="scene-label">Flame Salmon</p>
-      <div class="vc-wrapper" data-vc>
-        <video class="vc-left" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/org/fs1.mp4" type="video/mp4">
-        </video>
-        <video class="vc-right" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/ic/fs1.mp4" type="video/mp4">
-        </video>
-        <div class="vc-divider"></div>
-        <div class="vc-handle">&#8942;&#8942;</div>
-        <span class="vc-label vc-label-left">w/o IC-Net</span>
-        <span class="vc-label vc-label-right">w/ IC-Net</span>
-        <span class="vc-metric-left">28.94 dB / 2.86 MB</span>
-        <span class="vc-metric-right">28.84 dB / 2.17 MB</span>
+      <div class="dual-slider">
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/fs1.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/org/fs1.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/o IC-Net</span>
+          <span class="vc-metric-right">28.94 dB / 2.86 MB</span>
+        </div>
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/fs1.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/ic/fs1.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/ IC-Net</span>
+          <span class="vc-metric-right">28.84 dB / 2.17 MB</span>
+        </div>
       </div>
     </div>
 
-    <!-- ── ss ── -->
-    <div class="slider-cell">
+    <!-- ss -->
+    <div class="scene-row">
       <p class="scene-label">Sear Steak</p>
-      <div class="vc-wrapper" data-vc>
-        <video class="vc-left" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/org/ss.mp4" type="video/mp4">
-        </video>
-        <video class="vc-right" autoplay muted loop playsinline preload="auto">
-          <source src="static/videos/ic/ss.mp4" type="video/mp4">
-        </video>
-        <div class="vc-divider"></div>
-        <div class="vc-handle">&#8942;&#8942;</div>
-        <span class="vc-label vc-label-left">w/o IC-Net</span>
-        <span class="vc-label vc-label-right">w/ IC-Net</span>
-        <span class="vc-metric-left">33.45 dB / 1.93 MB</span>
-        <span class="vc-metric-right">34.62 dB / 2.03 MB</span>
+      <div class="dual-slider">
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/ss.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/org/ss.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/o IC-Net</span>
+          <span class="vc-metric-right">33.45 dB / 1.93 MB</span>
+        </div>
+        <div class="vc-wrapper" data-vc>
+          <video class="vc-left" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/gt/ss.mp4" type="video/mp4">
+          </video>
+          <video class="vc-right" autoplay muted loop playsinline preload="auto">
+            <source src="static/videos/ic/ss.mp4" type="video/mp4">
+          </video>
+          <div class="vc-divider"></div>
+          <div class="vc-handle">&#8942;&#8942;</div>
+          <span class="vc-label vc-label-left">GT</span>
+          <span class="vc-label vc-label-right">w/ IC-Net</span>
+          <span class="vc-metric-right">34.62 dB / 2.03 MB</span>
+        </div>
       </div>
     </div>
 
-  </div><!-- /slider-grid -->
+  </div>
 </section>
 
 <!-- ═════════════════════════════════ FOOTER ════════════════════════════════ -->
